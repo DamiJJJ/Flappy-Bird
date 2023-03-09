@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public GameObject playButton;
     public GameObject gameOver;
+    public GameObject getReady;
     private int score;
 
     private void Awake()
@@ -21,7 +22,15 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
 
         playButton.SetActive(false);
-        gameOver.SetActive(false);
+
+        if (gameOver.activeSelf)
+        {
+            gameOver.SetActive(false);
+        }
+        else
+        {
+            getReady.SetActive(false);
+        }       
 
         Time.timeScale = 1f;
         player.enabled = true;
