@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 1113426721}
   - component: {fileID: 1113426723}
   m_Layer: 0
-  m_Name: Sky
+  m_Name: SkyCollider
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
