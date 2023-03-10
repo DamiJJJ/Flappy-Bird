@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
+    public AudioSource tapSound;
     private int spriteIndex;
     private Vector3 direction;
     public float gravity = -9.8f;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
+            tapSound.Play();
             direction = Vector3.up * strength;
         }
 
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
+                tapSound.Play();
                 direction = Vector3.up * strength;
             }
         }

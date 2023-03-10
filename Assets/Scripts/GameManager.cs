@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public GameObject playButton;
     public GameObject gameOver;
     public GameObject getReady;
+    public AudioSource scoreSound;
+    public AudioSource gameOverSound;
+    public AudioSource playSound;
     private int score;
 
     private void Awake()
@@ -20,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreText.text = score.ToString();
-
+        playSound.Play();
         playButton.SetActive(false);
 
         if (gameOver.activeSelf)
@@ -52,12 +55,13 @@ public class GameManager : MonoBehaviour
     {
         gameOver.SetActive(true);
         playButton.SetActive(true);
-
+        gameOverSound.Play();
         Pause();
     }
     public void IncreaseScore()
     {
         score ++;
+        scoreSound.Play();
         scoreText.text = score.ToString();
     }
 }
