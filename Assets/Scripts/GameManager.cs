@@ -6,11 +6,13 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Text scoreText;
     public GameObject playButton;
+    public GameObject muteButtons;
     public GameObject gameOver;
     public GameObject getReady;
     public AudioSource scoreSound;
     public AudioSource gameOverSound;
     public AudioSource playSound;
+    public AudioSource bgMusic;
     private int score;
 
     private void Awake()
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
         playSound.Play();
         playButton.SetActive(false);
+        muteButtons.SetActive(false);
+        bgMusic.UnPause();
 
         if (gameOver.activeSelf)
         {
@@ -55,6 +59,8 @@ public class GameManager : MonoBehaviour
     {
         gameOver.SetActive(true);
         playButton.SetActive(true);
+        // muteButtons.SetActive(true);
+        bgMusic.Pause();
         gameOverSound.Play();
         Pause();
     }
