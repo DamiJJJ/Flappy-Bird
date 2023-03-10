@@ -6,7 +6,7 @@ Clone of Flappy Bird game made in Unity. Another project made for Android.
 
 ## Download
 
-You can download current version of the .apk _[here](https://mega.nz/file/GZwQwZYC#nGM40WF0G9QJcbQXM-YWGIX88rdXkUkWNkiIpEqtF7k)_.
+You can download current version of the .apk _[here](https://github.com/DamiJJJ/Unity-Flappy-Bird/releases)_.
 
 ## Changelog
 
