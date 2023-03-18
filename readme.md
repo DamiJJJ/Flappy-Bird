@@ -8,16 +8,4 @@ Clone of Flappy Bird game made in Unity. Another project made for Android.
 
 You can download current version of the .apk _[here](https://github.com/DamiJJJ/Unity-Flappy-Bird/releases)_.
 
-## Changelog
-
-* v.1.2.1
-    - UI appears in the letterbox if screen ratio is another than 16:9 portrait mode
-
-* v.1.2
-    - fix resolution settings, game will always display in 16:9 portrait mode
-
-* v.1.1
-    - change pipes speed to 4 (instead of 5)
-
-* v.1.0
-    - first apk build
+### Unity version: 2021.3.13f1
