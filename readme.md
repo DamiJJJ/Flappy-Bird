@@ -2,10 +2,10 @@
 
 Clone of Flappy Bird game made in Unity. Another project made for Android.
 
-## Current apk version: 1.2.1
+## Current apk version: 1.3.0
 
 ## Download
 
 You can download current version of the .apk _[here](https://github.com/DamiJJJ/Unity-Flappy-Bird/releases)_.
 
-### Unity version: 2021.3.13f1
+### Unity version: 2021.3.21f1

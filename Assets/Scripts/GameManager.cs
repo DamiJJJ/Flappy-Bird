@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public Player player;
     public Text scoreText;
+    public Text hiScoreText;
+    public Text labelText;
     public GameObject playButton;
     public GameObject muteButtons;
     public GameObject gameOver;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         Pause();
+        UpdateHiscore();
     }
 
     public void Play()
@@ -28,6 +31,9 @@ public class GameManager : MonoBehaviour
         playSound.Play();
         playButton.SetActive(false);
         muteButtons.SetActive(false);
+        hiScoreText.gameObject.SetActive(false);
+        labelText.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(true);
         bgMusic.UnPause();
 
         if (gameOver.activeSelf)
@@ -59,15 +65,31 @@ public class GameManager : MonoBehaviour
     {
         gameOver.SetActive(true);
         playButton.SetActive(true);
-        // muteButtons.SetActive(true);
+        hiScoreText.gameObject.SetActive(true);
+        labelText.gameObject.SetActive(true);
+        scoreText.gameObject.SetActive(false);
         bgMusic.Pause();
         gameOverSound.Play();
         Pause();
+        UpdateHiscore();
     }
     public void IncreaseScore()
     {
         score ++;
         scoreSound.Play();
         scoreText.text = score.ToString();
+    }
+
+    private void UpdateHiscore()
+    {
+        float hiscore = PlayerPrefs.GetFloat("hiscore", 0);
+
+        if (score > hiscore)
+        {
+            hiscore = score;
+            PlayerPrefs.SetFloat("hiscore", hiscore);
+        }
+
+        hiScoreText.text = Mathf.FloorToInt(hiscore).ToString();
     }
 }
